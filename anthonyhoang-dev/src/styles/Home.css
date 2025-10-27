@@ -1,7 +1,6 @@
 .home-body {
     width: 100%;
     height: 35rem;
-    background-color: azure;
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;

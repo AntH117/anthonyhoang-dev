@@ -1,0 +1,78 @@
+.home-body {
+    width: 100%;
+    height: 35rem;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    margin-top: 4rem;
+    padding-left: 1rem;
+    gap: 0.5rem
+}
+
+.home-title-text {
+    margin-top: 2rem;
+    width: 14rem;
+    text-wrap: wrap;
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-main-text {
+    width: 14rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.home-sub-text {
+    width: 20rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.home-projects-button {
+    width: 8rem;
+    height: 2rem;
+    border: 1px solid transparent;
+    background-color: rgb(40, 122, 230);
+    color: white;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+}
+
+.about-me-body {
+    width: 100%;
+    height: 8rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about-me-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.about-me-main {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.about-me-sub {
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+.profile-pic-body {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    background-color: aqua;
+    right: 2rem;
+    top: 2rem;
+    border-radius: 100%;
+}

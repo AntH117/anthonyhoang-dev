@@ -1,9 +1,50 @@
 .skills-body {
     width: 100%;
-    height: 20rem;
+    height: 25rem;
 }
 
 .skills-title {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+.skills-main {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.skills-grid-container {
+    margin-top: 1rem;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: 2rem;
+}
+
+.ind-skill-body {
+    width: 5rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.ind-skill-icon {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ind-icon {
+    height: 100%;
+}
+
+.ind-skill-title {
+    font-size: 1.1rem;
+    font-weight: 400;
 }

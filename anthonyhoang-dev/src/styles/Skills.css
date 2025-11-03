@@ -1,6 +1,6 @@
 .skills-body {
     width: 100%;
-    height: 25rem;
+    height: fit-content;
 }
 
 .skills-title {
@@ -15,7 +15,7 @@
 
 .skills-grid-container {
     margin-top: 1rem;
-    width: 100%;
+    width: 90%;
     height: fit-content;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));

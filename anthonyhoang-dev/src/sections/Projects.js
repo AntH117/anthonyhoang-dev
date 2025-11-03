@@ -3,12 +3,14 @@ import React from 'react';
 import codeIn from '../images/CodeIn.png';
 import flightFinder from '../images/flight-finder.png';
 import pathly from '../images/Pathly.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Projects() {
+    const navigate = useNavigate();
 
-    function IndividualProject({name, img}) {
+    function IndividualProject({name, img, callback}) {
         
-        return <div className='ind-project-body'>
+        return <div className='ind-project-body' onClick={() => callback()}>
             <div className='ind-project-img-container'>
                 <div className='ind-project-img'>
                     <img src={img} className='ind-img'/>
@@ -27,9 +29,9 @@ export default function Projects() {
             Projects
         </div>
         <div className='projects-layout'>
-            <IndividualProject name={'Pathly'} img={pathly}/>
-            <IndividualProject name={'CodeIn'} img={codeIn}/>
-            <IndividualProject name={'Flight Tracker'} img={flightFinder}/>
+            <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>
+            <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codeIn')}/>
+            <IndividualProject name={'Flight Tracker'} img={flightFinder} callback={() => navigate('/projects/flight-tracker')}/>
         </div>
     </div>
 }

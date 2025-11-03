@@ -2,6 +2,7 @@ import Home from './Home';
 import Projects from './Projects';
 import Navbar from './Navbar';
 import Skills from './Skills';
+import Contact from './Contact';
 import '../styles/Layout.css';
 
 export default function Layout() {
@@ -12,6 +13,7 @@ export default function Layout() {
             <Home />
             <Projects />
             <Skills />
+            <Contact />
         </div>
     )
 }

@@ -1,11 +1,13 @@
 import '../styles/Navbar.css';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+    const navigate = useNavigate();
 
-    function NavbarSelect({name}) {
+    function NavbarSelect({name, callback}) {
 
-        return <div className='navbar-selects'>
+        return <div className='navbar-selects' onClick={() => callback()}>
             {name}
         </div>
     }
@@ -15,7 +17,7 @@ export default function Navbar() {
             Anthony Hoang
         </div>
         <div className='navbar-selections'>
-            <NavbarSelect name={'Projects'}/>
+            <NavbarSelect name={'Projects'} callback={() => navigate('/projects')}/>
             <NavbarSelect name={'Skills'}/>
             <NavbarSelect name={'Contact'}/>
         </div>

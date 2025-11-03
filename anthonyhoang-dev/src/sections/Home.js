@@ -1,7 +1,9 @@
 import '../styles/Home.css';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+    const navigate = useNavigate();
 
     function ProfilePicture() {
 
@@ -38,7 +40,7 @@ export default function Home() {
         <div className='home-sub-text'>
             I love turning ideas into functional, user-friendly apps using React and modern web tools.
         </div>
-        <button className='home-projects-button'>
+        <button className='home-projects-button' onClick={() => navigate('/projects')}>
             View Projects
         </button>
         <AboutMe />

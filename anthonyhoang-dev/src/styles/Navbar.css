@@ -9,6 +9,7 @@
     background-color: white;
     border-bottom: 1px solid rgb(214, 214, 214);
     left: 0;
+    top: 0;
 }
 
 .navbar-home, .navbar-selections {
@@ -20,6 +21,7 @@
 
 .navbar-home {
     margin-left: 1rem;
+    cursor: pointer;
 }
 
 .navbar-selections {
@@ -35,4 +37,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }

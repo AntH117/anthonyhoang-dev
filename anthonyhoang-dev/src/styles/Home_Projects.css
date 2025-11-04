@@ -1,4 +1,4 @@
-.projects-body {
+.home-projects-body {
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
@@ -6,12 +6,12 @@
     height: fit-content;
 }
 
-.projects-title {
+.home-projects-title {
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.projects-layout {
+.home-projects-layout {
     margin-top: 1rem;
     width: 100%;
     height: fit-content;

@@ -1,4 +1,4 @@
-import '../styles/Projects.css';
+import '../styles/Home_Projects.css';
 import React from 'react';
 import pathly from '../images/Pathly_Light.png';
 import codeIn from '../images/CodeIn_Light.png';
@@ -8,7 +8,7 @@ import wordle from '../images/Wordle.png'
 import bookFinder from '../images/Book_finder.png'
 import { useNavigate } from 'react-router-dom';
 
-export default function Projects() {
+export default function Home_Projects() {
     const navigate = useNavigate();
 
     function IndividualProject({name, img, callback}) {
@@ -27,11 +27,11 @@ export default function Projects() {
         </div>
     }
 
-    return <div className='projects-body'>
-        <div className='projects-title'>
+    return <div className='home-projects-body'>
+        <div className='home-projects-title'>
             Projects
         </div>
-        <div className='projects-layout'>
+        <div className='home-projects-layout'>
             <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>
             <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codeIn')}/>
             <IndividualProject name={'Flight Tracker'} img={flightFinder} callback={() => navigate('/projects/flight-tracker')}/>

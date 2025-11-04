@@ -1,8 +1,8 @@
 import Home from './Home';
-import Projects from './Projects';
+import Home_Projects from './Home_Projects';
 import Navbar from './Navbar';
-import Skills from './Skills';
-import Contact from './Contact';
+import Home_Skills from './Home_Skills';
+import Home_Contact from './Home_Contact';
 import '../styles/Layout.css';
 
 export default function Layout() {
@@ -11,9 +11,9 @@ export default function Layout() {
         <div className='layout-container'>
             <Navbar />
             <Home />
-            <Projects />
-            <Skills />
-            <Contact />
+            <Home_Projects />
+            <Home_Skills />
+            <Home_Contact />
         </div>
     )
 }

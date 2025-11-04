@@ -1,15 +1,15 @@
-import '../styles/Contact.css';
+import '../styles/Home_Contact.css';
 import React from 'react';
 import Icons from '../icons/Icons';
 
-export default function Contact() {
+export default function Home_Contact() {
 
     function ContactField({icon, name, callback}) {
 
         return <div className='contact-field-body'>
             <div className='contact-field-icon'>
                 {icon}
-            </div>
+            </div>  
             <div className='contact-field-name'>
                 {name}
             </div>

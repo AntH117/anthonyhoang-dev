@@ -1,4 +1,4 @@
-import '../styles/Skills.css';
+import '../styles/Home_Skills.css';
 import React from 'react';
 import react_logo from '../images/React-icon.png';
 import javascript_logo from '../images/Js-logo.png';
@@ -7,7 +7,7 @@ import git_logo from '../images/Git-Icon.png';
 import firebase_logo from'../images/firebase-logo.png';
 import tailwind_logo from'../images/Tailwind_CSS_Logo.png';
 
-export default function Skills() {
+export default function Home_Skills() {
 
     const skills = [
         {title: 'React', logo: react_logo},

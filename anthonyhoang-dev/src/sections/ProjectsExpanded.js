@@ -1,8 +1,8 @@
 import '../styles/ProjectsExpanded.css';
 import Navbar from './Navbar';
 import React from 'react';
-import pathly from '../images/Pathly.png';
-import codeIn from '../images/CodeIn.png';
+import pathly from '../images/Pathly_Light.png';
+import codeIn from '../images/CodeIn_Light.png';
 import flightFinder from '../images/flight-finder.png';
 import slider from '../images/Slider.png'
 import wordle from '../images/Wordle.png'

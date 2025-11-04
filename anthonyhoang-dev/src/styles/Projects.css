@@ -29,6 +29,7 @@
     background-color: rgb(219, 219, 219);
     border-radius: 0.5rem;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .ind-project-img-container {

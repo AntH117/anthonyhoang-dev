@@ -1,8 +1,11 @@
 import '../styles/Projects.css';
 import React from 'react';
-import codeIn from '../images/CodeIn.png';
+import pathly from '../images/Pathly_Light.png';
+import codeIn from '../images/CodeIn_Light.png';
 import flightFinder from '../images/flight-finder.png';
-import pathly from '../images/Pathly.png';
+import slider from '../images/Slider.png'
+import wordle from '../images/Wordle.png'
+import bookFinder from '../images/Book_finder.png'
 import { useNavigate } from 'react-router-dom';
 
 export default function Projects() {
@@ -32,6 +35,9 @@ export default function Projects() {
             <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>
             <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codeIn')}/>
             <IndividualProject name={'Flight Tracker'} img={flightFinder} callback={() => navigate('/projects/flight-tracker')}/>
+            <IndividualProject name={'Wordle'} img={wordle} callback={() => navigate('/projects/wordle')}/>
+            <IndividualProject name={'Book Finder'} img={bookFinder} callback={() => navigate('/projects/book-finder')}/>
+            <IndividualProject name={'Slider'} img={slider} callback={() => navigate('/projects/slider')}/>
         </div>
     </div>
 }

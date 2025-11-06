@@ -33,7 +33,7 @@ export default function Home_Projects() {
         </div>
         <div className='home-projects-layout'>
             <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>
-            <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codeIn')}/>
+            <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codein')}/>
             <IndividualProject name={'Flight Tracker'} img={flightFinder} callback={() => navigate('/projects/flight-tracker')}/>
             <IndividualProject name={'Wordle'} img={wordle} callback={() => navigate('/projects/wordle')}/>
             <IndividualProject name={'Book Finder'} img={bookFinder} callback={() => navigate('/projects/book-finder')}/>

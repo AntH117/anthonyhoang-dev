@@ -1,56 +1,15 @@
 import '../styles/ProjectsExpanded.css';
 import Navbar from './Navbar';
 import React from 'react';
-import pathly from '../images/Pathly_Light.png';
-import codeIn from '../images/CodeIn_Light.png';
-import flightFinder from '../images/flight-finder.png';
-import slider from '../images/Slider.png'
-import wordle from '../images/Wordle.png'
-import bookFinder from '../images/Book_finder.png'
+import tempDb from '../data/temp_data';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProjectsExpanded() {
-
-    const Projects = [
-        {
-            name: 'CodeIn',
-            description: 'A developer-styled LinkedIn platform for coders featuring authentication, user profiles, and post sharing',
-            tags: ['React', 'Node.js', 'Firebase'],
-            image: codeIn
-        },
-        {
-            name: 'Pathly',
-            description: 'A trip planner that helps users map out travel routes and attractions using the Google Maps API with custom markers and dynamic directions.',
-            tags: ['React', 'Google Maps API', 'Tailwind CSS'],
-            image: pathly
-        },
-        {
-            name: 'Book Finder',
-            description: 'A responsive book discovery app using the Google Books API, allowing users to search, view details, and explore related titles with optimized caching.',
-            tags: ['React', 'API', 'JavaScript'],
-            image: bookFinder
-        },
-        {
-            name: 'Wordle',
-            description: 'A Wordle clone built with React featuring dynamic letter validation, daily word challenges, and clean state management using React Hooks.',
-            tags: ['React', 'Hooks', 'CSS'],
-            image: wordle
-        },
-        {
-            name: 'Flight Finder',
-            description: 'A flight tracking app displaying live Australian flight data, delay indicators, and detailed route info using real-time API integration.',
-            tags: ['React', 'API', 'Data Visualization'],
-            image: flightFinder
-        },
-        {
-            name: 'Slider',
-            description: 'A visually engaging website showcasing a smooth sliding animation feature built with React transitions and CSS effects.',
-            tags: ['React', 'CSS', 'Animations'],
-            image: slider
-        }
-    ]
-    
+    const projects = tempDb;
+    const navigate = useNavigate();
 
     function EProject({name, description, tags, image}) {
+        const url = name.toLowerCase().split(' ').join('-')
 
         function Tag({name}) {
 
@@ -61,7 +20,7 @@ export default function ProjectsExpanded() {
             </div>
         }
 
-        return <div className='eProject-body'>
+        return <div className='eProject-body' onClick={() => navigate(`${url}`)}>
             <div className='eProject-image-container'>
                 <img className='eProject-image' src={image} />
             </div>
@@ -92,8 +51,8 @@ export default function ProjectsExpanded() {
             </div>
             <div className='projects-expanded-layout'>
                 {
-                    Projects.map((p) => {
-                        return <EProject name={p.name} description={p.description} tags={p.tags} image={p.image}/>
+                    projects.map((p) => {
+                        return <EProject name={p.name} description={p.shortDescription} tags={p.tags} image={p.image}/>
                     })
                 }
             </div>

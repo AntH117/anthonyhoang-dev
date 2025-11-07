@@ -4,7 +4,6 @@
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     background-color: white;
     font-family: 'Poppins', sans-serif;
@@ -15,7 +14,7 @@
 
 .projects-expanded-body {
     width: 90%;
-    height: 50rem;
+    height: fit-content;
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -39,6 +38,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1rem;
+    padding-bottom: 1rem;
 }
 
 .eProject-body {

@@ -16,8 +16,22 @@
 }
 
 .projects-title {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     font-size: 2rem;
     font-weight: 500;
+}
+
+.back-button {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
 }
 
 .projects-short-description {
@@ -41,9 +55,10 @@
 
 .projects-more-image-container {
     width: 90%;
-    height: 15rem;
+    height: fit-content;
     border-radius: 0.5rem;
     border: 1px solid rgb(219, 219, 219);
+    overflow: hidden;
 }
 
 .projects-more-image {

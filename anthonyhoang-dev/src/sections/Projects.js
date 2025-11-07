@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import pathly from '../images/Pathly_Light.png';
 import tempDb from '../data/temp_data';
+import Icons from '../icons/Icons';
 
 export default function Projects() {
     const [projectData, setProjectData] = React.useState(null)
@@ -15,7 +16,8 @@ export default function Projects() {
     React.useEffect(() => {
         setProjectData(tempDb.find((x) => x.name.toLowerCase() === formattedProjectName))
     }, [])
-    console.log(projectData)
+
+    let navigate = useNavigate()
 
     function Tag({name}) {
 
@@ -32,6 +34,9 @@ export default function Projects() {
         <div>
             <div className='projects-title'>
                 {projectData.name}
+                <button className='back-button' onClick={() => navigate('/projects')}>
+                    <Icons.BackArrow width={'100%'} height={'100%'}/>
+                </button>
             </div>
             <div className='projects-short-description'>
                 {projectData.shortDescription}
@@ -39,7 +44,7 @@ export default function Projects() {
         </div>
         <div className='projects-more-container'>
             <div className='projects-more-image-container'>
-                <img className='projects-more-image' src={projectData.image}/>
+                <img className='projects-more-image' src={projectData.gif || projectData.image}/>
             </div>
             <div style={{width: '90%'}}>
                 <div className='projects-sub-title'>

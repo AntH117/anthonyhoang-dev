@@ -16,9 +16,10 @@ const tempDb = [
         name: 'CodeIn',
         shortDescription: 'A full-stack developer networking platform inspired by LinkedIn.',
         description: 'CodeIn is a full-stack developer networking platform inspired by LinkedIn, built with React and Firebase. It allows developers to create profiles, share projects, connect with others, and showcase their technical skills. Features include authentication, post feeds, and real-time updates to foster community interaction.',
-        tags: ['React', 'Firebase', 'Node.js', 'Express', 'CSS'],
+        tags: ['React', 'Firebase', 'Node.js', 'Express', 'CSS', 'Full-stack'],
         image: codeIn,
-        gif: codeInGif
+        gif: codeInGif,
+        url: 'https://github.com/AntH117/CodeIn'
     },
     {
         name: 'Pathly',
@@ -26,7 +27,8 @@ const tempDb = [
         description: 'Pathly is a personal trip planner that helps users organize and visualize their travel itineraries. Users can add destinations, set travel times, and receive optimized routes with step-by-step directions. The app leverages the Google Maps API to display interactive maps and calculate efficient travel paths between multiple locations.',
         tags: ['JavaScript', 'React', 'CSS', 'Google Maps API'],
         image: pathly,
-        gif: pathlyGif
+        gif: pathlyGif,
+        url: 'https://github.com/AntH117/pathly'
     },
     {
         name: 'Book Finder',
@@ -34,7 +36,8 @@ const tempDb = [
         description: 'Book Finder is a React-based application that enables users to search for books using the Google Books API. It displays a list of results with detailed information for each book, including authors, ratings, and descriptions. The app uses caching and React hooks to optimize performance when navigating between search results and detailed pages.',
         tags: ['React', 'JavaScript', 'Google Books API', 'CSS'],
         image: bookFinder,
-        gif: bookFinderGif
+        gif: bookFinderGif,
+        url: 'https://github.com/AntH117/Book_Finder'
     },
     {
         name: 'Wordle',
@@ -42,14 +45,16 @@ const tempDb = [
         description: 'A React recreation of the popular Wordle game where players guess a hidden five-letter word within six attempts. The app dynamically provides feedback on each guess through color-coded tiles, tracks player progress, and includes responsive design for mobile and desktop users.',
         tags: ['React', 'JavaScript', 'HTML', 'CSS'],
         image: wordle,
-        gif: worldeGif
+        gif: worldeGif,
+        url: 'https://github.com/AntH117/wordle'
     },
     {
         name: 'Flight Finder',
         shortDescription: 'A real-time flight tracking and filtering web app.',
         description: 'Flight Finder is a real-time flight tracking web application that retrieves and visualizes flight data using an external API. Users can filter flights by airline, status, and delay, and view detailed information such as origin, destination, and live updates. It also includes a “More Info” page for individual flights and delay indicators for user convenience.',
         tags: ['React', 'JavaScript', 'REST API', 'CSS'],
-        image: flightFinder
+        image: flightFinder,
+        url: 'https://github.com/AntH117/Flight-Finder'
     },
     {
         name: 'Slider Website',
@@ -57,7 +62,8 @@ const tempDb = [
         description: 'A creative and interactive website showcasing image and content sliders built with React. Each slide transitions smoothly using CSS animations, demonstrating front-end interactivity and responsive design. The project emphasizes component reusability and dynamic rendering for a visually engaging experience.',
         tags: ['React', 'JavaScript', 'HTML', 'CSS'],
         image: slider,
-        gif: sliderGif
+        gif: sliderGif,
+        url: 'https://github.com/AntH117/Slider'
     },
 ];
 

@@ -64,6 +64,11 @@ export default function Projects() {
                     })}
                 </div>
             </div>
+            <div style={{width: '90%'}}>
+                <div className='projects-sub-title' style={{textDecoration: 'underline', cursor: 'pointer', width: 'fit-content'}}>
+                    <a href={projectData.url} style={{color: 'black'}}>Github Repo</a>
+                </div>
+            </div>
         </div>
     </div>)
 }

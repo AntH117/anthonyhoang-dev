@@ -20,8 +20,8 @@ export default function Navbar() {
         </div>
         <div className='navbar-selections'>
             <NavbarSelect name={'Projects'} callback={() => navigate('/projects')} />
-            <NavbarSelect name={'Skills'}/>
-            <NavbarSelect name={'Contact'}/>
+            <NavbarSelect name={'Skills'} callback={() => console.log('nothing yet')}/>
+            <NavbarSelect name={'Contact'} callback={() => console.log('nothing yet')}/>
         </div>
     </div>
 }

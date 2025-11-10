@@ -12,7 +12,6 @@ export default function Projects() {
     let location = useLocation()
     const projectName = location.pathname.split('/').at(-1)
     const formattedProjectName = projectName.split('-').join(' ')
-    
     React.useEffect(() => {
         setProjectData(tempDb.find((x) => x.name.toLowerCase() === formattedProjectName))
     }, [])
@@ -59,7 +58,7 @@ export default function Projects() {
                     Technologies
                 </div>
                 <div className='projects-tag-body'>
-                    {projectData.tags.map((tag) => {
+                    {projectData.tags.sort((a,b) => b.length - a.length).map((tag) => {
                         return <Tag name={tag} />
                     })}
                 </div>

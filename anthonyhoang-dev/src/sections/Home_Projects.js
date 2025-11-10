@@ -28,8 +28,13 @@ export default function Home_Projects() {
     }
 
     return <div className='home-projects-body'>
-        <div className='home-projects-title'>
-            Projects
+        <div className='home-projects-title-container'>
+            <a className='home-projects-title'>
+                Projects
+            </a>
+            <button className='home-projects-more' onClick={() => navigate('/projects')}>
+                Explore all
+            </button>
         </div>
         <div className='home-projects-layout'>
             <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>

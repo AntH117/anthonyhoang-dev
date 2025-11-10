@@ -10,7 +10,7 @@ export default function ProjectsExpanded() {
 
     function EProject({name, description, tags, image}) {
         const url = name.toLowerCase().split(' ').join('-')
-
+        const sortedTags = tags.sort((a,b) => b.length - a.length)
         function Tag({name}) {
 
             return <div className='tag-body'>
@@ -32,7 +32,7 @@ export default function ProjectsExpanded() {
                     {description}
                 </div>
                 <div className='eProject-tags'>
-                    {tags.map((tag) => {
+                    {sortedTags.map((tag) => {
                         return <Tag name={tag} />
                     })}
                 </div>

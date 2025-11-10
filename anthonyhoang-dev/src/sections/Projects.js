@@ -52,6 +52,13 @@ export default function Projects() {
                 <div className='projects-long-description'>
                     {projectData.description}
                 </div>
+                <div className='projects-takeaways-container'>
+                    {projectData.keyTakeaways.map((k) => {
+                        return <div>
+                            &#9679; {k}
+                        </div>
+                    })}
+                </div>
             </div>
             <div style={{width: '90%'}}>
                 <div className='projects-sub-title'>

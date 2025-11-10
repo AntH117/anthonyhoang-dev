@@ -78,6 +78,16 @@
     font-weight: 400;
 }
 
+.projects-takeaways-container {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-weight: 600;
+    gap: 0.5rem;
+}
+
 .projects-tag-body {
     margin-top: 1rem;
     width: 90%;

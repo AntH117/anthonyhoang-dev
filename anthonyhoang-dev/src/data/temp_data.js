@@ -17,6 +17,11 @@ const tempDb = [
         shortDescription: 'A full-stack developer networking platform inspired by LinkedIn.',
         description: 'CodeIn is a full-stack developer networking platform inspired by LinkedIn, built with React and Firebase. It allows developers to create profiles, share projects, connect with others, and showcase their technical skills. Features include authentication, post feeds, and real-time updates to foster community interaction.',
         tags: ['React', 'Firebase', 'Node.js', 'Express', 'CSS', 'Full-stack'],
+        keyTakeaways: [
+            'Built my first full-stack project integrating frontend and backend seamlessly',
+            'Implemented Firebase authentication for secure user access',
+            'Gained experience in managing client–server data flow and handling API endpoints',
+          ],
         image: codeIn,
         gif: codeInGif,
         url: 'https://github.com/AntH117/CodeIn'
@@ -26,6 +31,11 @@ const tempDb = [
         shortDescription: 'An interactive trip planner with route optimization and map integration.',
         description: 'Pathly is a personal trip planner that helps users organize and visualize their travel itineraries. Users can add destinations, set travel times, and receive optimized routes with step-by-step directions. The app leverages the Google Maps API to display interactive maps and calculate efficient travel paths between multiple locations.',
         tags: ['JavaScript', 'React', 'CSS', 'Google Maps API'],
+        keyTakeaways: [
+            'Developed advanced experience working with the Google Maps API for route planning',
+            'Implemented dynamic location rendering and trip customization features',
+            'Learned to manage complex state interactions and performance optimization in React',
+          ],
         image: pathly,
         gif: pathlyGif,
         url: 'https://github.com/AntH117/pathly'
@@ -35,6 +45,11 @@ const tempDb = [
         shortDescription: 'A book search app powered by the Google Books API.',
         description: 'Book Finder is a React-based application that enables users to search for books using the Google Books API. It displays a list of results with detailed information for each book, including authors, ratings, and descriptions. The app uses caching and React hooks to optimize performance when navigating between search results and detailed pages.',
         tags: ['React', 'JavaScript', 'Google Books API', 'CSS'],
+        keyTakeaways: [
+            'Explored using external APIs for the first time via the Google Books API',
+            'Implemented data fetching, caching, and responsive rendering in React',
+            'Learned how to handle API edge cases and improve user experience with loading states',
+          ],
         image: bookFinder,
         gif: bookFinderGif,
         url: 'https://github.com/AntH117/Book_Finder'
@@ -44,6 +59,11 @@ const tempDb = [
         shortDescription: 'A React remake of the viral word puzzle game Wordle.',
         description: 'A React recreation of the popular Wordle game where players guess a hidden five-letter word within six attempts. The app dynamically provides feedback on each guess through color-coded tiles, tracks player progress, and includes responsive design for mobile and desktop users.',
         tags: ['React', 'JavaScript', 'HTML', 'CSS'],
+        keyTakeaways: [
+            'Strengthened React fundamentals through building an interactive game',
+            'Learned about efficient state management and conditional rendering',
+            'Improved understanding of component reusability and logic structuring',
+          ],
         image: wordle,
         gif: worldeGif,
         url: 'https://github.com/AntH117/wordle'
@@ -53,6 +73,11 @@ const tempDb = [
         shortDescription: 'A real-time flight tracking and filtering web app.',
         description: 'Flight Finder is a real-time flight tracking web application that retrieves and visualizes flight data using an external API. Users can filter flights by airline, status, and delay, and view detailed information such as origin, destination, and live updates. It also includes a “More Info” page for individual flights and delay indicators for user convenience.',
         tags: ['React', 'JavaScript', 'REST API', 'CSS'],
+        keyTakeaways: [
+            'Integrated a real-time flight tracking API with React for live data visualization',
+            'Implemented advanced filtering and search functionalities for better UX',
+            'Enhanced understanding of asynchronous data handling and UI optimization',
+          ],
         image: flightFinder,
         url: 'https://github.com/AntH117/Flight-Finder'
     },
@@ -61,6 +86,11 @@ const tempDb = [
         shortDescription: 'A visually engaging website featuring animated content sliders.',
         description: 'A creative and interactive website showcasing image and content sliders built with React. Each slide transitions smoothly using CSS animations, demonstrating front-end interactivity and responsive design. The project emphasizes component reusability and dynamic rendering for a visually engaging experience.',
         tags: ['React', 'JavaScript', 'HTML', 'CSS'],
+        keyTakeaways: [
+            'One of my earliest passion projects experimenting with creative UI/UX design',
+            'Learned to implement smooth mouse-tracking and interactive animations',
+            'Gained deeper appreciation for intuitive motion design and user interactivity',
+          ],
         image: slider,
         gif: sliderGif,
         url: 'https://github.com/AntH117/Slider'

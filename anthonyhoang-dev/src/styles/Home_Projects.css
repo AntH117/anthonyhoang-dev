@@ -36,10 +36,18 @@
     margin-top: 1rem;
     width: 100%;
     height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
     gap: 1rem;
 }
+
+/* Larger Devices */
+@media (min-width: 900px) {
+
+  }
 
 .ind-project-body {
     width: 10rem;

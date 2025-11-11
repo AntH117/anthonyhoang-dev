@@ -30,7 +30,7 @@ export default function Projects() {
 
     return (projectData && <div className='projects-container'>
         <Navbar />
-        <div>
+        <div className='projects-upper-body'>
             <div className='projects-title'>
                 {projectData.name}
                 <button className='back-button' onClick={() => navigate('/projects')}>
@@ -45,34 +45,36 @@ export default function Projects() {
             <div className='projects-more-image-container'>
                 <img className='projects-more-image' src={projectData.gif || projectData.image}/>
             </div>
-            <div style={{width: '90%'}}>
-                <div className='projects-sub-title'>
-                    Description
+            <div className='projects-more-other'>
+                <div style={{width: '90%'}}>
+                    <div className='projects-sub-title'>
+                        Description
+                    </div>
+                    <div className='projects-long-description'>
+                        {projectData.description}
+                    </div>
+                    <div className='projects-takeaways-container'>
+                        {projectData.keyTakeaways.map((k) => {
+                            return <div>
+                                &#9679; {k}
+                            </div>
+                        })}
+                    </div>
                 </div>
-                <div className='projects-long-description'>
-                    {projectData.description}
+                <div style={{width: '90%'}}>
+                    <div className='projects-sub-title'>
+                        Technologies
+                    </div>
+                    <div className='projects-tag-body'>
+                        {projectData.tags.sort((a,b) => b.length - a.length).map((tag) => {
+                            return <Tag name={tag} />
+                        })}
+                    </div>
                 </div>
-                <div className='projects-takeaways-container'>
-                    {projectData.keyTakeaways.map((k) => {
-                        return <div>
-                            &#9679; {k}
-                        </div>
-                    })}
-                </div>
-            </div>
-            <div style={{width: '90%'}}>
-                <div className='projects-sub-title'>
-                    Technologies
-                </div>
-                <div className='projects-tag-body'>
-                    {projectData.tags.sort((a,b) => b.length - a.length).map((tag) => {
-                        return <Tag name={tag} />
-                    })}
-                </div>
-            </div>
-            <div style={{width: '90%'}}>
-                <div className='projects-sub-title' style={{textDecoration: 'underline', cursor: 'pointer', width: 'fit-content'}}>
-                    <a href={projectData.url} style={{color: 'black'}}>Github Repo</a>
+                <div style={{width: '90%'}}>
+                    <div className='projects-sub-title' style={{textDecoration: 'underline', cursor: 'pointer', width: 'fit-content'}}>
+                        <a href={projectData.url} style={{color: 'black'}}>Github Repo</a>
+                    </div>
                 </div>
             </div>
         </div>

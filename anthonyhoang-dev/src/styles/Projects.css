@@ -13,12 +13,14 @@
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
+    align-items: center;
 }
 .projects-upper-body {
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: calc(1400px + 4rem);
 }
 
 .projects-title {
@@ -81,16 +83,19 @@
     .projects-more-container {
         flex-direction: row;
         align-items: flex-start;
+        gap: 2rem;
+        max-width: calc(1400px + 4rem);
     }
   
     .projects-more-image-container {
         width: 60%;
-        max-width: 900px;
+        max-width: 700px;
         padding-left: 2rem;
     }
   
     .projects-more-other {
         width: 40%;
+        max-width: 700px;
     }
   }
 

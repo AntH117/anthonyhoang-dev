@@ -59,7 +59,14 @@
     border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.ind-project-body:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
 
 .ind-project-img-container {
     height: 70%;

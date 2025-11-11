@@ -6,7 +6,6 @@
     overflow-y: auto;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    padding-left: 2rem;
     min-width: 430px;
     gap: 1rem;
     background-color: white;

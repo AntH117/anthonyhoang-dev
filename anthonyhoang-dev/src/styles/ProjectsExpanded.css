@@ -37,20 +37,18 @@
     height: 100%;
     display: grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.5rem;
     justify-content: center;
     max-width: 1600px;
     margin: 0 auto;
-  
 }
 
 .eProject-body {
     cursor: pointer;
     width: 80%;
-    min-width: 10rem;
     height: 70%;
-    min-height: 25rem;
+    min-height: 26rem;
     border: 1px solid rgb(236, 236, 236);
     border-radius: 1rem;
     display: flex;
@@ -80,7 +78,21 @@
     border: 1px solid rgb(236, 236, 236);
     border-radius: 0.5rem;
     overflow: hidden;
+    object-fit: cover;
 }
+
+/* Larger Devices */
+@media (min-width: 900px) {
+    .projects-expanded-layout {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .eProject-body {
+        min-width: 10rem;
+    }
+    .eProject-image {
+    }
+}
+
 
 .eProject-info {
     width: 100%;

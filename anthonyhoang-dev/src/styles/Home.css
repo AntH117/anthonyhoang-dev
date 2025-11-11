@@ -9,6 +9,23 @@
     gap: 0.5rem
 }
 
+.home-upper-body {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.profile-pic-body {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    background-color: aqua;
+    right: 2rem;
+    top: 2rem;
+    border-radius: 100%;
+}
+
+
 .home-title-text {
     margin-top: 2rem;
     width: 14rem;
@@ -20,13 +37,14 @@
 }
 
 .home-main-text {
-    width: 14rem;
+    width: 55%;
     font-size: 1.1rem;
     font-weight: 400;
 }
 
 .home-sub-text {
     width: 20rem;
+    width: 70%;
     font-size: 0.9rem;
     font-weight: 300;
 }
@@ -64,14 +82,4 @@
 .about-me-sub {
     font-size: 0.9rem;
     font-weight: 200;
-}
-
-.profile-pic-body {
-    position: absolute;
-    width: 10rem;
-    height: 10rem;
-    background-color: aqua;
-    right: 2rem;
-    top: 2rem;
-    border-radius: 100%;
 }

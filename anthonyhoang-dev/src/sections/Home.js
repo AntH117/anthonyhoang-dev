@@ -30,20 +30,22 @@ export default function Home() {
     }
 
     return <div className='home-body'>
-        <div className='home-title-text'>
-            <span>Hi, I'm</span>
-            <span>Anthony Hoang</span>
+        <div className='home-upper-body'>
+            <div className='home-title-text'>
+                <span>Hi, I'm</span>
+                <span>Anthony Hoang</span>
+            </div>
+            <div className='home-main-text'>
+                a Full-Stack Developer passionate about creating clean, interactive web experiences
+            </div>
+            <div className='home-sub-text'>
+                I love turning ideas into functional, user-friendly apps using React and modern web tools.
+            </div>
+            <button className='home-projects-button' onClick={() => navigate('/projects')}>
+                View Projects
+            </button>
+            <ProfilePicture />
         </div>
-        <div className='home-main-text'>
-            a Full-Stack Developer passionate about creating clean, interactive web experiences
-        </div>
-        <div className='home-sub-text'>
-            I love turning ideas into functional, user-friendly apps using React and modern web tools.
-        </div>
-        <button className='home-projects-button' onClick={() => navigate('/projects')}>
-            View Projects
-        </button>
         <AboutMe />
-        <ProfilePicture />
     </div>
 }

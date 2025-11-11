@@ -17,8 +17,9 @@
     margin-top: 1rem;
     width: 90%;
     height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -30,6 +31,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 1rem;
+    padding: 0.5rem;
 }
 
 .ind-skill-icon {

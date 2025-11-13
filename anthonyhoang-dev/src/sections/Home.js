@@ -1,6 +1,10 @@
 import '../styles/Home.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Home_Projects from './Home_Projects';
+import Navbar from './Navbar';
+import Home_Skills from './Home_Skills';
+import Home_Contact from './Home_Contact';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -29,23 +33,28 @@ export default function Home() {
         </div>
     }
 
-    return <div className='home-body'>
-        <div className='home-upper-body'>
-            <div className='home-title-text'>
-                <span>Hi, I'm</span>
-                <span>Anthony Hoang</span>
+    return <>
+        <div className='home-body'>
+            <div className='home-upper-body'>
+                <div className='home-title-text'>
+                    <span>Hi, I'm</span>
+                    <span>Anthony Hoang</span>
+                </div>
+                <div className='home-main-text'>
+                    a Full-Stack Developer passionate about creating clean, interactive web experiences
+                </div>
+                <div className='home-sub-text'>
+                    I love turning ideas into functional, user-friendly apps using React and modern web tools.
+                </div>
+                <button className='home-projects-button' onClick={() => navigate('/projects')}>
+                    View Projects
+                </button>
+                <ProfilePicture />
             </div>
-            <div className='home-main-text'>
-                a Full-Stack Developer passionate about creating clean, interactive web experiences
-            </div>
-            <div className='home-sub-text'>
-                I love turning ideas into functional, user-friendly apps using React and modern web tools.
-            </div>
-            <button className='home-projects-button' onClick={() => navigate('/projects')}>
-                View Projects
-            </button>
-            <ProfilePicture />
+            <AboutMe />
         </div>
-        <AboutMe />
-    </div>
+        <Home_Projects />
+        <Home_Skills />
+        <Home_Contact />
+    </>
 }

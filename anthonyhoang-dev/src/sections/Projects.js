@@ -29,7 +29,6 @@ export default function Projects() {
 
 
     return (projectData && <div className='projects-container'>
-        <Navbar />
         <div className='projects-upper-body'>
             <div className='projects-title'>
                 {projectData.name}

@@ -41,7 +41,6 @@ export default function ProjectsExpanded() {
     }
 
     return <div className='projects-expanded-container'>
-        <Navbar />
         <div className='projects-expanded-body'>
             <div className='projects-expanded-title'>
                 Projects

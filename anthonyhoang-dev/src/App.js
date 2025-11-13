@@ -4,7 +4,7 @@ import Layout from './sections/Layout';
 import ProjectsExpanded from "./sections/ProjectsExpanded";
 import Projects from "./sections/Projects";
 import Home from "./sections/Home";
-import Skills from "./sections/Skills";
+import Journey from "./sections/Journey";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<ProjectsExpanded />} />
             <Route path="/projects/:id" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
+            <Route path="/journey" element={<Journey />} />
           </Route>
         </Routes>
       </Router>

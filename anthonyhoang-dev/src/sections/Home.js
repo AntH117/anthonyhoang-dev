@@ -28,7 +28,7 @@ export default function Home() {
                 engaging.
             </div>
             <div className='about-me-sub'>
-                When I'm not coding, I'm polishing up my Japanese and exploring my passion for Escape Rooms
+                When I'm not coding, I'm polishing up my Japanese and exploring my passion for Escape Rooms 🗝️
             </div>
         </div>
     }

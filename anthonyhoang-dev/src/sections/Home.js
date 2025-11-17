@@ -5,6 +5,7 @@ import Home_Projects from './Home_Projects';
 import Navbar from './Navbar';
 import Home_Skills from './Home_Skills';
 import Home_Contact from './Home_Contact';
+import portrait from '../images/AH_portrait.jpg'
 
 export default function Home() {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Home() {
     function ProfilePicture() {
 
         return <div className='profile-pic-body'>
-
+            <img src={portrait} className='profile-pic'/>
         </div>
     }
 

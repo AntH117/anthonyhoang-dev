@@ -25,6 +25,14 @@
     right: 2rem;
     top: 2rem;
     border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 120%;
 }
 
 

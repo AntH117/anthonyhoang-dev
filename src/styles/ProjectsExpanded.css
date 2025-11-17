@@ -66,9 +66,12 @@
 
 .eProject-image-container {
     width: 100%;
-    height: 60%;
+    height: 40%;
     min-height: 7rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .eProject-image {
@@ -88,7 +91,8 @@
     .eProject-body {
         min-width: 10rem;
     }
-    .eProject-image {
+    .eProject-image-container {
+        height: 60%;
     }
 }
 

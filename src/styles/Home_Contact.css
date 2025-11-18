@@ -6,7 +6,7 @@
     gap: 1rem;
     padding-bottom: 3rem;
     margin-left: 2rem;
-}
+} 
 
 .contact-title {
     font-size: 1.5rem;
@@ -33,6 +33,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;    
 }
 
 .contact-field-icon {

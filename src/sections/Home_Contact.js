@@ -4,9 +4,11 @@ import Icons from '../icons/Icons';
 
 export default function Home_Contact() {
 
+    const linkendin_link = 'https://www.linkedin.com/in/anthony-hoang-2b8578199/'
+
     function ContactField({icon, name, callback}) {
 
-        return <div className='contact-field-body'>
+        return <div className='contact-field-body' onClick={() => callback()} >
             <div className='contact-field-icon'>
                 {icon}
             </div>  
@@ -29,8 +31,8 @@ export default function Home_Contact() {
                 </span>
             </div>
             <div className='contacts-body'>
-                <ContactField icon={<Icons.Email />} name={'anthony.hoang201@gmail.com'}/>
-                <ContactField icon={<Icons.Linkendin />} name={'Anthony Hoang'}/>
+                <ContactField icon={<Icons.Email />} name={'anthony.hoang201@gmail.com'} callback={() => null}/>
+                <ContactField icon={<Icons.Linkendin />} name={'Anthony Hoang'} callback={() => window.open(linkendin_link, "_blank")}/>
             </div>
         </div>
     )

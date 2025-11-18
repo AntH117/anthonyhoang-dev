@@ -45,8 +45,10 @@ export default function Timeline() {
             </div>
         </div>
         <div className='timeline-graph-parent'>
-            <div className='timeline-line'>
-            
+            <div className='timeline-line-parent'>
+                <div className='timeline-line'>
+                
+                </div>
             </div>
             {tempRoles.map((role) => {
                 return <TimelineSegment date={role.date} title={role.title} desctiption={role.description}/>

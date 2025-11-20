@@ -7,13 +7,14 @@ import slider from '../images/Slider.png'
 import wordle from '../images/Wordle.png'
 import bookFinder from '../images/Book_finder.png'
 import { useNavigate } from 'react-router-dom';
+import Icons from '../icons/Icons';
 
 export default function Home_Projects() {
     const navigate = useNavigate();
 
-    function IndividualProject({name, img, callback}) {
+    function IndividualProject({name, img, callback, pinned}) {
         
-        return <div className='ind-project-body' onClick={() => callback()}>
+        return <div className={`ind-project-body ${pinned && 'pinned'}`} onClick={() => callback()}>
             <div className='ind-project-img-container'>
                 <div className='ind-project-img'>
                     <img src={img} className='ind-img'/>
@@ -24,6 +25,9 @@ export default function Home_Projects() {
                     {name}
                 </p>
             </div>
+            {pinned && <div className='pin-body'>
+                <Icons.Pin color={'#60a5fa'} />
+                </div>}
         </div>
     }
 
@@ -37,8 +41,8 @@ export default function Home_Projects() {
             </button>
         </div>
         <div className='home-projects-layout'>
+        <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codein')} pinned={true}/>
             <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>
-            <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codein')}/>
             <IndividualProject name={'Flight Tracker'} img={flightFinder} callback={() => navigate('/projects/flight-tracker')}/>
             <IndividualProject name={'Wordle'} img={wordle} callback={() => navigate('/projects/wordle')}/>
             <IndividualProject name={'Book Finder'} img={bookFinder} callback={() => navigate('/projects/book-finder')}/>

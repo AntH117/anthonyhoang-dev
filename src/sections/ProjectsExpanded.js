@@ -3,12 +3,13 @@ import Navbar from './Navbar';
 import React from 'react';
 import tempDb from '../data/temp_data';
 import { useNavigate } from 'react-router-dom';
+import Icons from '../icons/Icons';
 
 export default function ProjectsExpanded() {
     const projects = tempDb;
     const navigate = useNavigate();
 
-    function EProject({name, description, tags, image}) {
+    function EProject({name, description, tags, image, pinned}) {
         const url = name.toLowerCase().split(' ').join('-')
         const sortedTags = tags.sort((a,b) => b.length - a.length)
         function Tag({name}) {
@@ -20,7 +21,7 @@ export default function ProjectsExpanded() {
             </div>
         }
 
-        return <div className='eProject-body' onClick={() => navigate(`${url}`)}>
+        return <div className={`eProject-body ${pinned && 'pinned'}`} onClick={() => navigate(`${url}`)}>
             <div className='eProject-image-container'>
                 <img className='eProject-image' src={image} />
             </div>
@@ -37,6 +38,9 @@ export default function ProjectsExpanded() {
                     })}
                 </div>
             </div>
+            {pinned && <div className='eProject-pin-body'>
+                <Icons.Pin  color={'#60a5fa'} width={'1.2rem'} height={'1.2rem'}/>
+                </div>}
         </div>
     }
 
@@ -51,7 +55,7 @@ export default function ProjectsExpanded() {
             <div className='projects-expanded-layout'>
                 {
                     projects.map((p) => {
-                        return <EProject name={p.name} description={p.shortDescription} tags={p.tags} image={p.image}/>
+                        return <EProject name={p.name} description={p.shortDescription} tags={p.tags} image={p.image} pinned={p.name === 'CodeIn'}/>
                     })
                 }
             </div>

@@ -9,10 +9,11 @@ import portrait from '../images/AH_portrait.jpg'
 
 export default function Home() {
     const navigate = useNavigate();
+    const [message, setMessage] = React.useState(false)
 
     function ProfilePicture() {
 
-        return <div className='profile-pic-body'>
+        return <div className='profile-pic-body' onClick={() => setMessage(true)}>
             <img src={portrait} className='profile-pic'/>
         </div>
     }
@@ -50,6 +51,10 @@ export default function Home() {
                 <button className='home-projects-button' onClick={() => navigate('/projects')}>
                     View Projects
                 </button>
+                {message && 
+                <div className='message-body'>
+                    Welcome to my page!
+                </div>}
                 <ProfilePicture />
             </div>
             <AboutMe />

@@ -21,7 +21,6 @@ export default function Navbar() {
         <div className='navbar-selections'>
             <NavbarSelect name={'Projects'} callback={() => navigate('/projects')} />
             <NavbarSelect name={'Timeline'} callback={() => navigate('/timeline')} />
-            <NavbarSelect name={'Contact'} callback={() => console.log('nothing yet')}/>
         </div>
     </div>
 }

@@ -6,7 +6,7 @@ import tempRoles from '../data/temp_roles';
 export default function Timeline() {
 
     function TimelineSegment({date, title, desctiption}) {
-        const [expanded, setExpanded] = React.useState(false)
+        const [expanded, setExpanded] = React.useState(true)
         const descRef = React.useRef(null)
 
         React.useEffect(() => {

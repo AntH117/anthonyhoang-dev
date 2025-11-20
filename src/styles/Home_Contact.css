@@ -42,8 +42,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease;
 }
 
 .contact-field-name {
-
+    transition: transform 0.2s ease, color 0.2s ease;
 }
+
+.contact-field-name:hover {
+    transform: translateX(4px);
+    color: #3b82f6; /* soft blue */
+}
+
+/* .contact-field-body:hover .contact-field-icon {
+    transform: scale(1.15);
+} */

@@ -69,10 +69,11 @@
     border-radius: 0.3rem;
     margin-top: 1rem;
     cursor: pointer;
+    transition: all 0.2s ease-in-out
 }
 
 .home-projects-button:hover {
-    
+    background-color: rgb(65, 145, 255);
 }
 
 .about-me-body {

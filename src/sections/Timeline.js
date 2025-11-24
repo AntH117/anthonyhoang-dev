@@ -35,17 +35,17 @@ export default function Timeline() {
                     {date}
                 </div>
             </div>
-            <div className='segment-right'>
+            <div className={`segment-right ${expanded && 'expanded'}`}>
                 <div className='segment-title' onClick={() => setExpanded(!expanded)}>
                     <div className='anchor-body'>
-                        <div className='anchor-circle'></div>
-                        <div className='anchor-line'></div>
+                        <div className='anchor-circle' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
+                        <div className='anchor-line'  style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
                     </div>
                     <div className='segment-title-text'>
                         {title}
                     </div>
                 </div>
-                <div className='segment-description' ref={descRef} >
+                <div className='segment-description' ref={descRef} style={expanded ? {paddingBottom: '0.5rem'} : {}}>
                     {desctiption}
                 </div>
             </div>

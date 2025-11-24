@@ -22,6 +22,8 @@
   --scroll-track: #F2F3F5;
   --scroll-thumb: #C5C7CA;
   --scroll-thumb-hover: #B1B3B6;
+
+  --anchor: #60a5fa;
 }
 
 /* Dark mode */
@@ -38,6 +40,8 @@
   --scroll-track: #1E2023;
   --scroll-thumb: #3A3D41;
   --scroll-thumb-hover: #4B4F54;
+
+  --anchor: #3B82F6;
 }
 
 /* Scroll bar */

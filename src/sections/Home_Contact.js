@@ -29,7 +29,7 @@ export default function Home_Contact() {
             </div>
             <div className='contact-main-text'>
                 I'm always open to chatting about web development, collaborations and/or opportunities 
-                <span>
+                <span style={{marginTop: '0.5rem'}}>
                     Feel free to reach out!
                 </span>
             </div>

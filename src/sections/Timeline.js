@@ -3,13 +3,15 @@ import React from 'react';
 import Navbar from './Navbar';
 import tempRoles from '../data/temp_roles';
 import { useTheme } from '../context/themeProvider';
+import { del } from 'motion/react-client';
 
 
 export default function Timeline() {
     const { darkMode } = useTheme();
+    const timings = [1000, 2000, 3000, 4000]
 
-    function TimelineSegment({date, title, desctiption}) {
-        const [expanded, setExpanded] = React.useState(true)
+    function TimelineSegment({date, title, desctiption, icon, delay}) {
+        const [expanded, setExpanded] = React.useState(false)
         const descRef = React.useRef(null)
 
         React.useEffect(() => {
@@ -21,6 +23,12 @@ export default function Timeline() {
             }
         }, [expanded]);
 
+        React.useEffect(() => {
+            setTimeout(() => {
+                setExpanded(true)
+            }, delay)
+        }, [])
+
         return <div className='segment-body'>
             <div className='segment-left'>
                 <div className={`segment-date ${darkMode && 'dark'}`}>
@@ -29,7 +37,13 @@ export default function Timeline() {
             </div>
             <div className='segment-right'>
                 <div className='segment-title' onClick={() => setExpanded(!expanded)}>
-                    {title}
+                    <div className='anchor-body'>
+                        <div className='anchor-circle'></div>
+                        <div className='anchor-line'></div>
+                    </div>
+                    <div className='segment-title-text'>
+                        {title}
+                    </div>
                 </div>
                 <div className='segment-description' ref={descRef} >
                     {desctiption}
@@ -53,8 +67,8 @@ export default function Timeline() {
                 
                 </div>
             </div>
-            {tempRoles.map((role) => {
-                return <TimelineSegment date={role.date} title={role.title} desctiption={role.description}/>
+            {tempRoles.map((role, i) => {
+                return <TimelineSegment date={role.date} title={role.title} desctiption={role.description} icon={role.icon} delay={timings[i]}/>
             })}
         </div>
     </div>

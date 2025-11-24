@@ -1,8 +1,10 @@
 import '../styles/Home_Contact.css';
 import React from 'react';
 import Icons from '../icons/Icons';
+import { useTheme } from '../context/themeProvider';
 
 export default function Home_Contact() {
+    const { darkMode } = useTheme();
 
     const linkendin_link = 'https://www.linkedin.com/in/anthony-hoang-2b8578199/'
     const github_link = 'https://github.com/AntH117'
@@ -32,9 +34,9 @@ export default function Home_Contact() {
                 </span>
             </div>
             <div className='contacts-body'>
-                <ContactField icon={<Icons.Email />} name={'anthony.hoang201@gmail.com'} callback={() => null}/>
-                <ContactField icon={<Icons.Linkendin />} name={'Anthony Hoang'} callback={() => window.open(linkendin_link, "_blank")}/>
-                <ContactField icon={<Icons.GitHub />} name={'AntH117'} callback={() => window.open(github_link, "_blank")}/>
+                <ContactField icon={<Icons.Email color={'#2A7AE4'}/>} name={'anthony.hoang201@gmail.com'} callback={() => null}/>
+                <ContactField icon={<Icons.Linkendin color={'#2A7AE4'}/>} name={'Anthony Hoang'} callback={() => window.open(linkendin_link, "_blank")}/>
+                <ContactField icon={<Icons.GitHub color={'#2A7AE4'}/>} name={'AntH117'} callback={() => window.open(github_link, "_blank")}/>
             </div>
         </div>
     )

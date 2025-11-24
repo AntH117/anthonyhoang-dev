@@ -5,12 +5,18 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    background-color: #F7F8FA;
+    background-color: var(--bg);
     font-family: 'Poppins', sans-serif;
     min-width: 430px;
     gap: 3rem;
 }
 
 body {
-    color: #1A1A1A
+    color: var(--text-main)
+}
+
+/* Dark mode themes */
+.layout-container.dark {
+    background-color: var(--bg);
+    color: var(--text-main);
 }

@@ -7,15 +7,16 @@ import '../styles/Layout.css';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 import { ThemeProvider } from '../context/themeProvider';
+import { useTheme } from '../context/themeProvider';
+
 
 export default function Layout() {
+    const { darkMode } = useTheme();
 
     return (
-        <ThemeProvider>
-            <div className='layout-container'>
+            <div className={`layout-container ${darkMode && 'dark'}`}>
                 <Navbar />
                 <Outlet />
             </div>
-        </ThemeProvider>
     )
 }

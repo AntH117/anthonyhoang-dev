@@ -5,8 +5,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import pathly from '../images/Pathly_Light.png';
 import tempDb from '../data/temp_data';
 import Icons from '../icons/Icons';
+import { useTheme } from '../context/themeProvider';
 
 export default function Projects() {
+    const { darkMode } = useTheme();
     const [projectData, setProjectData] = React.useState(null)
 
     let location = useLocation()
@@ -20,7 +22,7 @@ export default function Projects() {
 
     function Tag({name}) {
 
-        return <div className='tag-body'>
+        return <div className={`tag-body ${darkMode && 'dark'}`}>
             <div className='tag-text'>
              {name}
             </div>
@@ -28,7 +30,7 @@ export default function Projects() {
     }
 
 
-    return (projectData && <div className='projects-container'>
+    return (projectData && <div className={`projects-container ${darkMode && 'dark'}`}>
         <div className='projects-upper-body'>
             <div className='projects-title'>
                 {projectData.name}
@@ -40,7 +42,7 @@ export default function Projects() {
                 {projectData.shortDescription}
             </div>
         </div>
-        <div className='projects-more-container'>
+        <div className={`projects-more-container ${darkMode && 'dark'}`}>
             <div className='projects-more-image-container'>
                 <img className='projects-more-image' src={projectData.gif || projectData.image}/>
             </div>
@@ -72,7 +74,7 @@ export default function Projects() {
                 </div>
                 <div style={{width: '90%'}}>
                     <div className='projects-sub-title' style={{textDecoration: 'underline', cursor: 'pointer', width: 'fit-content'}}>
-                        <a href={projectData.url} style={{color: 'black'}}>Github Repo</a>
+                        <a href={projectData.url} style={{color: 'var(--text-sub)'}}>Github Repo</a>
                     </div>
                 </div>
             </div>

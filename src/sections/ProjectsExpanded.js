@@ -4,24 +4,26 @@ import React from 'react';
 import tempDb from '../data/temp_data';
 import { useNavigate } from 'react-router-dom';
 import Icons from '../icons/Icons';
+import { useTheme } from '../context/themeProvider';
 
 export default function ProjectsExpanded() {
     const projects = tempDb;
     const navigate = useNavigate();
+    const { darkMode } = useTheme();
 
     function EProject({name, description, tags, image, pinned}) {
         const url = name.toLowerCase().split(' ').join('-')
         const sortedTags = tags.sort((a,b) => b.length - a.length)
         function Tag({name}) {
 
-            return <div className='tag-body'>
+            return <div className={`tag-body ${darkMode && 'dark'}`}>
                 <div className='tag-text'>
                  {name}
                 </div>
             </div>
         }
 
-        return <div className={`eProject-body ${pinned && 'pinned'}`} onClick={() => navigate(`${url}`)}>
+        return <div className={`eProject-body ${pinned && 'pinned'} ${darkMode && 'dark'}`} onClick={() => navigate(`${url}`)}>
             <div className='eProject-image-container'>
                 <img className='eProject-image' src={image} />
             </div>
@@ -44,7 +46,7 @@ export default function ProjectsExpanded() {
         </div>
     }
 
-    return <div className='projects-expanded-container'>
+    return <div className={`projects-expanded-container ${darkMode && 'dark'}`}>
         <div className='projects-expanded-body'>
             <div className='projects-expanded-title'>
                 Projects

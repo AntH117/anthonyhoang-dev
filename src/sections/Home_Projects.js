@@ -8,9 +8,11 @@ import wordle from '../images/Wordle.png'
 import bookFinder from '../images/Book_finder.png'
 import { useNavigate } from 'react-router-dom';
 import Icons from '../icons/Icons';
+import { useTheme } from '../context/themeProvider';
 
 export default function Home_Projects() {
     const navigate = useNavigate();
+    const { darkMode } = useTheme();
 
     function IndividualProject({name, img, callback, pinned}) {
         
@@ -20,7 +22,7 @@ export default function Home_Projects() {
                     <img src={img} className='ind-img'/>
                 </div>
             </div>
-            <div className='ind-project-name'>
+            <div className={`ind-project-name ${darkMode && 'dark'}`}>
                 <p>
                     {name}
                 </p>
@@ -36,12 +38,12 @@ export default function Home_Projects() {
             <a className='home-projects-title'>
                 Projects
             </a>
-            <button className='home-projects-more' onClick={() => navigate('/projects')}>
+            <button className={`home-projects-more ${darkMode && 'dark'}`} onClick={() => navigate('/projects')}>
                 Explore all
             </button>
         </div>
         <div className='home-projects-layout'>
-        <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codein')} pinned={true}/>
+            <IndividualProject name={'CodeIn'} img={codeIn} callback={() => navigate('/projects/codein')} pinned={true}/>
             <IndividualProject name={'Pathly'} img={pathly} callback={() => navigate('/projects/pathly')}/>
             <IndividualProject name={'Flight Tracker'} img={flightFinder} callback={() => navigate('/projects/flight-tracker')}/>
             <IndividualProject name={'Wordle'} img={wordle} callback={() => navigate('/projects/wordle')}/>

@@ -7,3 +7,27 @@
   overflow-y: hidden;
   position: relative;
 }
+
+:root {
+  /* Light mode */
+  --bg: #F7F8FA;
+  --bg-card: #FFFFFF;
+  --bg-sub-card: #e6e6e6;
+  --text-sub-card: #4A4D50;
+  --text-main: #1A1A1A;
+  --text-sub: #5A5A5A;
+  --border: #DADDE1;
+  --button: #2A7AE4;
+}
+
+/* Dark mode */
+.dark {
+  --bg: #111315;
+  --bg-card: #181A1D;
+  --bg-sub-card: #2A2D31;
+  --text-sub-card: #D4D7DB;
+  --text-main: #FFFFFF;
+  --text-sub: #A9B0B8;
+  --border: #2A2D31;
+  --primary: #5CA8FF;
+}

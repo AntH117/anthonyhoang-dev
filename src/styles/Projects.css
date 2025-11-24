@@ -8,7 +8,8 @@
     font-family: 'Poppins', sans-serif;
     min-width: 430px;
     gap: 1rem;
-    background-color: #F7F8FA;
+    background-color: var(--bg);
+    color: var(--text-main);
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
@@ -58,7 +59,8 @@
     align-items: center;
     gap: 1rem;
     padding-bottom: 2rem;
-    background-color: #FFFFFF;
+    background-color: var(--bg-card);
+    color: var(--text-main)
 }
 
 .projects-more-other {

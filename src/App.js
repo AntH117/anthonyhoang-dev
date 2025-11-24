@@ -5,21 +5,24 @@ import ProjectsExpanded from "./sections/ProjectsExpanded";
 import Projects from "./sections/Projects";
 import Home from "./sections/Home";
 import Timeline from "./sections/Timeline";
+import { ThemeProvider } from "./context/themeProvider";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="" element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<ProjectsExpanded />} />
-            <Route path="/projects/:id" element={<Projects />} />
-            <Route path="/timeline" element={<Timeline />} />
-          </Route>
-        </Routes>
-      </Router>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="" element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<ProjectsExpanded />} />
+              <Route path="/projects/:id" element={<Projects />} />
+              <Route path="/timeline" element={<Timeline />} />
+            </Route>
+          </Routes>
+        </Router>
+      </div>
+    </ThemeProvider>
   );
 }
 

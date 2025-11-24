@@ -2,8 +2,11 @@ import '../styles/Timeline.css';
 import React from 'react';
 import Navbar from './Navbar';
 import tempRoles from '../data/temp_roles';
+import { useTheme } from '../context/themeProvider';
+
 
 export default function Timeline() {
+    const { darkMode } = useTheme();
 
     function TimelineSegment({date, title, desctiption}) {
         const [expanded, setExpanded] = React.useState(true)
@@ -20,7 +23,7 @@ export default function Timeline() {
 
         return <div className='segment-body'>
             <div className='segment-left'>
-                <div className='segment-date'>
+                <div className={`segment-date ${darkMode && 'dark'}`}>
                     {date}
                 </div>
             </div>
@@ -35,7 +38,7 @@ export default function Timeline() {
         </div>
     }
 
-    return <div className='timeline-outer-body'>
+    return <div className={`timeline-outer-body ${darkMode && 'dark'}`}>
         <div className='timeline-upper-body'>
             <div className='timeline-title'>
                 My Journey

@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     z-index: 999;
-    background-color: #F7F8FA;
+    background-color: var(--bg);
     border-bottom: 1px solid rgb(214, 214, 214);
     left: 0;
     top: 0;
@@ -75,5 +75,6 @@
 /* Dark mode styles */
 
 .navbar-body.dark {
-    
+    background-color: var(--bg);
+    color: var(--text-main);
 }

@@ -118,6 +118,8 @@
 }
 
 .projects-long-description {
+    color: var(--text-sub);
+    margin-top: 0.5rem;
     font-size: 1rem;
     font-weight: 400;
 }

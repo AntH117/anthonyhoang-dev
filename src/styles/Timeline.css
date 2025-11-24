@@ -85,7 +85,7 @@
     justify-content: center;
     font-weight: 300;
     background-color: var(--bg-sub-card);
-    color: var(--text-sub-card);
+    color: var(--text-main);
     z-index: 90;
 }
 
@@ -102,7 +102,7 @@
     display: flex;
     align-items: center;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
 
 }
@@ -111,7 +111,8 @@
     width: 100%;
     font-weight: 400;
     overflow: hidden;
-    transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out;
+    color: var(--text-sub)
 }
 
 /* Larger Devices */

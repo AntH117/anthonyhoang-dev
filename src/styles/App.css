@@ -18,6 +18,10 @@
   --text-sub: #5A5A5A;
   --border: #DADDE1;
   --button: #2A7AE4;
+
+  --scroll-track: #F2F3F5;
+  --scroll-thumb: #C5C7CA;
+  --scroll-thumb-hover: #B1B3B6;
 }
 
 /* Dark mode */
@@ -30,4 +34,26 @@
   --text-sub: #A9B0B8;
   --border: #2A2D31;
   --primary: #5CA8FF;
+  
+  --scroll-track: #1E2023;
+  --scroll-thumb: #3A3D41;
+  --scroll-thumb-hover: #4B4F54;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover);
 }

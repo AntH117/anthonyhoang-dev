@@ -7,7 +7,7 @@
     justify-content: space-between;
     z-index: 999;
     background-color: var(--bg);
-    border-bottom: 1px solid rgb(214, 214, 214);
+    border-bottom: 1px solid var(--border);
     left: 0;
     top: 0;
     align-items: center;

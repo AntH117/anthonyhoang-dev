@@ -61,8 +61,8 @@
     height: 7rem;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(219, 219, 219);
-    background-color: rgb(219, 219, 219);
+    border: 2px solid var(--border);
+    background-color: var(--bg);
     border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
@@ -78,13 +78,13 @@
 
 @keyframes flash {
     0% {
-        border: 1px solid rgb(219, 219, 219);
+        border: 2px solid var(--border);
     }
     50% {
-        border: 1px solid #60a5fa;
+        border: 2px solid #60a5fa;
     }
     0% {
-        border: 1px solid rgb(219, 219, 219);
+        border: 2px solid var(--border);
     }
 }
 

@@ -48,7 +48,7 @@ export default function Projects() {
             </div>
             <div className='projects-more-other'>
                 <div style={{width: '90%'}}>
-                    <div className='projects-sub-title'>
+                    <div className={`projects-sub-title`}>
                         Description
                     </div>
                     <div className='projects-long-description'>

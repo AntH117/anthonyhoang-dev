@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     z-index: 999;
-    background-color: white;
+    background-color: #F7F8FA;
     border-bottom: 1px solid rgb(214, 214, 214);
     left: 0;
     top: 0;
@@ -40,4 +40,40 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+/* Dark mode toggle */
+
+.toggle-container {
+    padding: 5px;
+    border: none;
+    border-radius: 2rem;
+    background-color: #82d7f8;
+    cursor: pointer;
+    width: 3.2rem;
+    position: relative;
+}
+
+.toggle-handle {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #f1d884;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 
+    0 0 8px 4px rgba(255, 215, 0, 0.5), 
+    inset 0 0 4px rgba(255, 255, 255, 0.6); 
+}
+ 
+
+.toggle-container.dark {
+    background-color: #1E1E2F
+  }
+
+/* Dark mode styles */
+
+.navbar-body.dark {
+    
 }

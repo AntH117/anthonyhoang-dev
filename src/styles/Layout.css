@@ -5,8 +5,12 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #F7F8FA;
     font-family: 'Poppins', sans-serif;
     min-width: 430px;
     gap: 3rem;
+}
+
+body {
+    color: #1A1A1A
 }

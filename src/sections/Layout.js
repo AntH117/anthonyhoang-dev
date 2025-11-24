@@ -5,13 +5,17 @@ import Home_Skills from './Home_Skills';
 import Home_Contact from './Home_Contact';
 import '../styles/Layout.css';
 import { Outlet } from 'react-router-dom';
+import React from 'react';
+import { ThemeProvider } from '../context/themeProvider';
 
 export default function Layout() {
 
     return (
-        <div className='layout-container'>
-            <Navbar />
-            <Outlet />
-        </div>
+        <ThemeProvider>
+            <div className='layout-container'>
+                <Navbar />
+                <Outlet />
+            </div>
+        </ThemeProvider>
     )
 }

@@ -53,7 +53,7 @@ export default function Home() {
                 </button>
                 {message && 
                 <div className='message-body'>
-                    Welcome to my page!
+                    Hi there!
                 </div>}
                 <ProfilePicture />
             </div>

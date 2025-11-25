@@ -12,6 +12,7 @@ export default function Timeline() {
 
     function TimelineSegment({date, title, desctiption, icon, delay}) {
         const [expanded, setExpanded] = React.useState(false)
+        const [appear, setAppear] = React.useState(false)
         const descRef = React.useRef(null)
 
         React.useEffect(() => {
@@ -26,17 +27,23 @@ export default function Timeline() {
         React.useEffect(() => {
             setTimeout(() => {
                 setExpanded(true)
+            }, timings.at(-1) + delay)
+        }, [])
+                React.useEffect(() => {
+            setTimeout(() => {
+                setAppear(true)
             }, delay)
         }, [])
 
-        return <div className='segment-body'>
+        return (
+        <div className={`segment-body`}>
             <div className='segment-left'>
-                <div className={`segment-date ${darkMode && 'dark'}`}>
+                <div className={`segment-date ${darkMode && 'dark'} ${appear && 'appear'}`}>
                     {date}
                 </div>
             </div>
-            <div className={`segment-right ${expanded && 'expanded'}`}>
-                <div className='segment-title' onClick={() => setExpanded(!expanded)}>
+            <div className={`segment-right ${expanded && 'expanded'}  ${appear && 'appear'}`}>
+                <div className={`segment-title`} onClick={() => setExpanded(!expanded)}>
                     <div className='anchor-body'>
                         <div className='anchor-circle' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
                         <div className='anchor-line'  style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
@@ -50,6 +57,7 @@ export default function Timeline() {
                 </div>
             </div>
         </div>
+        )
     }
 
     return <div className={`timeline-outer-body ${darkMode && 'dark'}`}>

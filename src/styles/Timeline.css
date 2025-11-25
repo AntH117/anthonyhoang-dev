@@ -94,6 +94,34 @@
     border: 1px solid rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 0 0.5rem 0 0.5rem;
+    opacity: 0;
+    transform: translateY(2px);
+}
+
+.segment-date.appear {
+    animation: dateAppear 0.5s forwards
+}
+
+@keyframes dateAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes jobCardAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .segment-right {
@@ -109,6 +137,11 @@
     border: 1px solid rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 0 0.7rem 0 0.7rem;
+    opacity: 0;
+}
+
+.segment-right.appear {
+    animation: jobCardAppear 0.5s forwards 0.5s;
 }
 
 .segment-right:hover {

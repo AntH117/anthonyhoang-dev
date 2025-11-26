@@ -54,6 +54,17 @@
     justify-content: center;
 }
 
+.timeline-line-parent.desktop {
+    width: 100%;
+    max-width: 100%;
+}
+
+.blank-body {
+    width: 35%;
+    height: 100%;
+    padding: 0 0.7rem 0 0.7rem;
+}
+
 .timeline-line {
     width: 5px;
     height: 100%;
@@ -220,11 +231,12 @@
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     color: var(--text-sub);
+    height: 0px;
 }
 
 /* Larger Devices */
 @media (min-width: 900px) {
     .timeline-graph-parent {
-        width: 60%;
+        width: 90%;
     }
 }

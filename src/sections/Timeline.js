@@ -18,6 +18,7 @@ export default function Timeline() {
             setDestop(false)
         }
     }, [width])
+    
     function useBodyWidth() {
         const [width, setWidth] = React.useState(document.body.clientWidth);
       
@@ -32,7 +33,7 @@ export default function Timeline() {
     }
 
     function TimelineSegment({date, title, desctiption, icon, delay, pos}) {
-        const [expanded, setExpanded] = React.useState(false)
+        const [expanded, setExpanded] = React.useState(true)
         const [appear, setAppear] = React.useState(false)
         const descRef = React.useRef(null)
 
@@ -50,11 +51,11 @@ export default function Timeline() {
                 setExpanded(true)
             }, timings.at(-1) + delay)
         }, [])
-                React.useEffect(() => {
-            setTimeout(() => {
-                setAppear(true)
-            }, delay)
-        }, [])
+        // React.useEffect(() => {
+        //     setTimeout(() => {
+        //         setAppear(true)
+        //     }, delay)
+        // }, [])
 
 
         function Segment() {

@@ -105,13 +105,11 @@
     border: 1px solid rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 0 0.5rem 0 0.5rem;
-    opacity: 0;
-    transform: translateY(2px);
 }
 
-.segment-date.appear {
+/* .segment-date.appear {
     animation: dateAppear 0.5s forwards
-}
+} */
 
 @keyframes dateAppear {
     0% {
@@ -148,12 +146,11 @@
     border: 1px solid rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 0 0.7rem 0 0.7rem;
-    opacity: 0;
 }
 
-.segment-right.appear {
+/* .segment-right.appear {
     animation: jobCardAppear 0.5s forwards 0.5s;
-}
+} */
 
 .segment-right:hover {
     transform: translateY(-2px);

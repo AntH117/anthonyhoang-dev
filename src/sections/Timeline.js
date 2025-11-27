@@ -4,39 +4,36 @@ import Navbar from './Navbar';
 import tempRoles from '../data/temp_roles';
 import { useTheme } from '../context/themeProvider';
 import { del } from 'motion/react-client';
+import { motion } from 'motion/react';
 
+function useBreakpoint(breakpoint = 900) {
+    const [isLarge, setIsLarge] = React.useState(() => window.innerWidth > breakpoint);
+
+    React.useEffect(() => {
+        const check = () => setIsLarge(window.innerWidth > breakpoint);
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, [breakpoint]);
+
+    return isLarge; 
+}
 
 export default function Timeline() {
     const { darkMode } = useTheme();
     const timings = [1000, 2000, 3000, 4000]
-    const width = useBodyWidth()
-    const [desktop, setDestop] = React.useState(width >= 900)
+    const isLargeScreen = useBreakpoint(900);
+    const [desktop, setDestop] = React.useState(isLargeScreen)
     React.useEffect(() => {
-        if (width >= 900 && desktop !== true) {
-            setDestop(true)
-        } else if (width < 900 && desktop !== false) {
-            setDestop(false)
-        }
-    }, [width])
+        setDestop(isLargeScreen)
+    }, [isLargeScreen])
     
-    function useBodyWidth() {
-        const [width, setWidth] = React.useState(document.body.clientWidth);
-      
-        React.useEffect(() => {
-          const updateWidth = () => setWidth(document.body.clientWidth);
-      
-          window.addEventListener("resize", updateWidth);
-          return () => window.removeEventListener("resize", updateWidth);
-        }, []);
-      
-        return width;
-    }
-
     function TimelineSegment({date, title, desctiption, icon, delay, pos}) {
-        const [expanded, setExpanded] = React.useState(true)
-        const [appear, setAppear] = React.useState(false)
-        const descRef = React.useRef(null)
 
+        function Segment() {
+        const [expanded, setExpanded] = React.useState(false)
+        const descRef = React.useRef(null)
+        const [appear, setAppear] = React.useState(false)
+        
         React.useEffect(() => {
             if (expanded && descRef.current) {
                 const height = descRef.current.scrollHeight;
@@ -46,27 +43,22 @@ export default function Timeline() {
             }
         }, [expanded]);
 
+        // Set appear for first time
         React.useEffect(() => {
             setTimeout(() => {
-                setExpanded(true)
-            }, timings.at(-1) + delay)
+                setAppear(true)
+            }, delay)
         }, [])
-        // React.useEffect(() => {
-        //     setTimeout(() => {
-        //         setAppear(true)
-        //     }, delay)
-        // }, [])
 
 
-        function Segment() {
-            return (
-                <div className={`segment-body`}>
+        return appear &&
+            <div className={`segment-body`}>
                 <div className='segment-left'>
-                    <div className={`segment-date ${darkMode && 'dark'} ${appear && 'appear'}`}>
+                    <motion.div initial={{ opacity: 0, transform: 'translateY(10px)'}} animate={{ opacity: 1, transform: 'translateY(0px)', transition: {duration: 0.5} }} className={`segment-date ${darkMode && 'dark'}`}>
                         {date}
-                    </div>
+                    </motion.div>
                 </div>
-                <div className={`segment-right ${expanded && 'expanded'}  ${appear && 'appear'}`}>
+                <motion.div initial={{ opacity: 0, transform: 'translateX(50px)'}} animate={{ opacity: 1, transform: 'translateX(0px)', transition: {duration: 0.5, delay: 0.5} }} className={`segment-right ${expanded && 'expanded'}`}>
                     <div className={`segment-title`} onClick={() => setExpanded(!expanded)}>
                         <div className='anchor-body'>
                             <div className='anchor-circle' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
@@ -79,39 +71,73 @@ export default function Timeline() {
                     <div className='segment-description' ref={descRef} style={expanded ? {paddingBottom: '0.5rem'} : {}}>
                         {desctiption}
                     </div>
-                </div>
+                </motion.div>
             </div>
-            )
+            
         }
 
         function DesktopSegment() {
+            const [appear, setAppear] = React.useState(false)
+
+            React.useEffect(() => {
+                setTimeout(() => {
+                    setAppear(true)
+                }, delay)
+            }, [])
 
             function DesktopCard() {
+            const [expanded, setExpanded] = React.useState(false)
+            const descRef = React.useRef(null)
+            const position = pos % 2 ? 'left' : 'right'
+                
+            React.useEffect(() => {
+                if (expanded && descRef.current) {
+                    const height = descRef.current.scrollHeight;
+                    descRef.current.style.height = `${height}px`;
+                } else if (descRef.current) {
+                    descRef.current.style.height = "0px";
+                }
+            }, [expanded]);
+                const variants = {
+                    left: {
+                        opacity: 0,
+                        transform: 'translateX(-50px)'
+                    },
+                    right: {
+                        opacity: 0,
+                        transform: 'translateX(50px)'
+                    }
+                }
+                
                 
                 return (
-                    <div className={`segment-right ${expanded && 'expanded'}  ${appear && 'appear'}`} style={{width: '35%'}}>
-                    <div className={`segment-title`} onClick={() => setExpanded(!expanded)}>
-                        <div className='anchor-body'>
+                 <motion.div initial={position === 'left' ? variants.left : variants.right} animate={{ opacity: 1, transform: 'translateX(0px)', transition: {duration: 0.5, delay: 0.5} }} style={{width: '35%'}} className={`segment-right ${expanded && 'expanded'}`}>
+                    <div className={`segment-title`} onClick={() => setExpanded(!expanded)} style={position === 'left' ? {justifyContent: 'end'} : {}}>
+                        {position === 'right' && <div className='anchor-body'>
                             <div className='anchor-circle' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
                             <div className='anchor-line'  style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
-                        </div>
+                        </div>}
                         <div className='segment-title-text'>
                             {title}
                         </div>
+                        {position === 'left' && <div className='anchor-body'>
+                            <div className='anchor-line-left'  style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
+                            <div className='anchor-circle-left' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
+                        </div>}
                     </div>
                     <div className='segment-description' ref={descRef} style={expanded ? {paddingBottom: '0.5rem'} : {}}>
                         {desctiption}
                     </div>
-                </div>
+                </motion.div>
                 )
             }
 
             function DesktopDate() {
                 return (
                 <div className='segment-left'>
-                    <div className={`segment-date ${darkMode && 'dark'} ${appear && 'appear'}`}>
+                    <motion.div initial={{ opacity: 0, transform: 'translateY(10px)'}} animate={{ opacity: 1, transform: 'translateY(0px)', transition: {duration: 0.5} }} className={`segment-date ${darkMode && 'dark'}`}>
                         {date}
-                    </div>
+                    </motion.div>
                 </div>
                 )
             }
@@ -123,14 +149,13 @@ export default function Timeline() {
                     </div>
                 )
             }
-            
-            return (
+            return appear &&
                 <div className='segment-body' style={{justifyContent: 'space-between'}}>
                     {pos % 2 ? <DesktopCard /> : <Blank />}
                     <DesktopDate />
                     {pos % 2 ? <Blank /> : <DesktopCard />}
                 </div>
-            )
+            
         }
 
         return desktop ? <DesktopSegment/> : <Segment />

@@ -78,6 +78,7 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    z-index: 99;
 }
 
 .segment-left {
@@ -103,7 +104,6 @@
         0 2px 6px rgba(0, 0, 0, 0.08),   
         0 1px 3px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 0 0.5rem 0 0.5rem;
 }
 
@@ -122,10 +122,22 @@
     }
 }
 
-@keyframes jobCardAppear {
+@keyframes jobCardAppearRight {
     0% {
         opacity: 0;
         transform: translateX(50px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes jobCardAppearLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
     }
     100% { 
         opacity: 1;
@@ -148,8 +160,12 @@
     padding: 0 0.7rem 0 0.7rem;
 }
 
-/* .segment-right.appear {
-    animation: jobCardAppear 0.5s forwards 0.5s;
+/* .segment-right.appear-right {
+    animation: jobCardAppearRight 0.5s forwards 0.5s;
+}
+
+.segment-right.appear-left {
+    animation: jobCardAppearLeft 0.5s forwards 0.5s;
 } */
 
 .segment-right:hover {
@@ -211,12 +227,31 @@
     position: absolute;
     left: 0.5rem;
     transition: all 0.5s ease-in-out;
+}
 
-    
+.anchor-circle-left {
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: var(--anchor);
+    border-radius: 100%;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    right: 0;
+}
+
+.anchor-line-left{
+    content: '';
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: var(--anchor);
+    border-radius: 0.3rem;
+    position: absolute;
+    right: 0.5rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .segment-title-text {
-    width: 80%;
+    width: fit-content;
     height: fit-content;
     white-space: nowrap; 
     overflow: hidden;  

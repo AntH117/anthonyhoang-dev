@@ -30,50 +30,56 @@ export default function Timeline() {
     function TimelineSegment({date, title, desctiption, icon, delay, pos}) {
 
         function Segment() {
-        const [expanded, setExpanded] = React.useState(false)
-        const descRef = React.useRef(null)
-        const [appear, setAppear] = React.useState(false)
-        
-        React.useEffect(() => {
-            if (expanded && descRef.current) {
-                const height = descRef.current.scrollHeight;
-                descRef.current.style.height = `${height}px`;
-            } else if (descRef.current) {
-                descRef.current.style.height = "0px";
-            }
-        }, [expanded]);
-
-        // Set appear for first time
-        React.useEffect(() => {
-            setTimeout(() => {
-                setAppear(true)
-            }, delay)
-        }, [])
-
-
-        return appear &&
-            <div className={`segment-body`}>
-                <div className='segment-left'>
-                    <motion.div initial={{ opacity: 0, transform: 'translateY(10px)'}} animate={{ opacity: 1, transform: 'translateY(0px)', transition: {duration: 0.5} }} className={`segment-date ${darkMode && 'dark'}`}>
-                        {date}
-                    </motion.div>
-                </div>
-                <motion.div initial={{ opacity: 0, transform: 'translateX(50px)'}} animate={{ opacity: 1, transform: 'translateX(0px)', transition: {duration: 0.5, delay: 0.5} }} className={`segment-right ${expanded && 'expanded'}`}>
-                    <div className={`segment-title`} onClick={() => setExpanded(!expanded)}>
-                        <div className='anchor-body'>
-                            <div className='anchor-circle' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
-                            <div className='anchor-line'  style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
-                        </div>
-                        <div className='segment-title-text'>
-                            {title}
-                        </div>
-                    </div>
-                    <div className='segment-description' ref={descRef} style={expanded ? {paddingBottom: '0.5rem'} : {}}>
-                        {desctiption}
-                    </div>
-                </motion.div>
-            </div>
+            const [expanded, setExpanded] = React.useState(false)
+            const descRef = React.useRef(null)
+            const [appear, setAppear] = React.useState(false)
             
+            React.useEffect(() => {
+                if (expanded && descRef.current) {
+                    const height = descRef.current.scrollHeight;
+                    descRef.current.style.height = `${height}px`;
+                } else if (descRef.current) {
+                    descRef.current.style.height = "0px";
+                }
+            }, [expanded]);
+
+            // Auto Expand
+            React.useEffect(() => {
+                setTimeout(() => {
+                    setExpanded(true)
+                }, timings.at(-1) + delay)
+            }, [])
+
+            // Set appear for first time
+            React.useEffect(() => {
+                setTimeout(() => {
+                    setAppear(true)
+                }, delay)
+            }, [])
+
+
+            return appear &&
+                <div className={`segment-body`}>
+                    <div className='segment-left'>
+                        <motion.div initial={{ opacity: 0, transform: 'translateY(10px)'}} animate={{ opacity: 1, transform: 'translateY(0px)', transition: {duration: 0.5} }} className={`segment-date ${darkMode && 'dark'}`}>
+                            {date}
+                        </motion.div>
+                    </div>
+                    <motion.div initial={{ opacity: 0, transform: 'translateX(50px)'}} animate={{ opacity: 1, transform: 'translateX(0px)', transition: {duration: 0.5, delay: 0.5} }} className={`segment-right ${expanded && 'expanded'}`}>
+                        <div className={`segment-title`} onClick={() => setExpanded(!expanded)}>
+                            <div className='anchor-body'>
+                                <div className='anchor-circle' style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
+                                <div className='anchor-line'  style={expanded ? {} : {backgroundColor: '#A9B0B8'}}></div>
+                            </div>
+                            <div className='segment-title-text'>
+                                {title}
+                            </div>
+                        </div>
+                        <div className='segment-description' ref={descRef} style={expanded ? {paddingBottom: '0.5rem'} : {}}>
+                            {desctiption}
+                        </div>
+                    </motion.div>
+                </div>  
         }
 
         function DesktopSegment() {
@@ -86,18 +92,26 @@ export default function Timeline() {
             }, [])
 
             function DesktopCard() {
-            const [expanded, setExpanded] = React.useState(false)
-            const descRef = React.useRef(null)
-            const position = pos % 2 ? 'left' : 'right'
+                const [expanded, setExpanded] = React.useState(false)
+                const descRef = React.useRef(null)
+                const position = pos % 2 ? 'left' : 'right'
+                    
+                React.useEffect(() => {
+                    if (expanded && descRef.current) {
+                        const height = descRef.current.scrollHeight;
+                        descRef.current.style.height = `${height}px`;
+                    } else if (descRef.current) {
+                        descRef.current.style.height = "0px";
+                    }
+                }, [expanded]);
+
+                // Auto Expand
+                React.useEffect(() => {
+                    setTimeout(() => {
+                        setExpanded(true)
+                    }, timings.at(-1) + 500)
+                }, [])
                 
-            React.useEffect(() => {
-                if (expanded && descRef.current) {
-                    const height = descRef.current.scrollHeight;
-                    descRef.current.style.height = `${height}px`;
-                } else if (descRef.current) {
-                    descRef.current.style.height = "0px";
-                }
-            }, [expanded]);
                 const variants = {
                     left: {
                         opacity: 0,
@@ -150,7 +164,7 @@ export default function Timeline() {
                 )
             }
             return appear &&
-                <div className='segment-body' style={{justifyContent: 'space-between'}}>
+                <div className='segment-body' style={{justifyContent: 'center'}}>
                     {pos % 2 ? <DesktopCard /> : <Blank />}
                     <DesktopDate />
                     {pos % 2 ? <Blank /> : <DesktopCard />}

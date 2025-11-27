@@ -56,7 +56,7 @@
 
 .timeline-line-parent.desktop {
     width: 100%;
-    max-width: 100%;
+    max-width: 1400px;
 }
 
 .blank-body {
@@ -270,5 +270,6 @@
 @media (min-width: 900px) {
     .timeline-graph-parent {
         width: 90%;
+        max-width: 1400px;
     }
 }

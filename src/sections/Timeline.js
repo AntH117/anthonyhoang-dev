@@ -30,6 +30,10 @@ export default function Timeline() {
         const hasAppered = React.useRef(false);
         const hasExpanded = React.useRef(false)
         const { darkMode } = useTheme();
+        const [desktop, setDestop] = React.useState(isLargeScreen)
+        React.useEffect(() => {
+            setDestop(isLargeScreen)
+        }, [isLargeScreen])
         
         function Segment() {
             const [expanded, setExpanded] = React.useState(hasExpanded.current)

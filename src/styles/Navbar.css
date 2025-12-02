@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     z-index: 999;
-    background-color: var(--bg);
+    background: var(--gradient-nav);
     border-bottom: 1px solid var(--border);
     left: 0;
     top: 0;
@@ -48,7 +48,7 @@
     padding: 5px;
     border: none;
     border-radius: 2rem;
-    background-color: #82d7f8;
+    background-color: var(--toggle-bg);
     cursor: pointer;
     width: 3.2rem;
     position: relative;
@@ -57,24 +57,11 @@
 .toggle-handle {
     width: 1.2rem;
     height: 1.2rem;
-    background-color: #f1d884;
+    background-color: var(--toggle-handle);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-content: center;
-    box-shadow: 
-    0 0 8px 4px rgba(255, 215, 0, 0.5), 
-    inset 0 0 4px rgba(255, 255, 255, 0.6); 
+    box-shadow: var(--toggle-shadow)
 }
  
-
-.toggle-container.dark {
-    background-color: #1E1E2F
-  }
-
-/* Dark mode styles */
-
-.navbar-body.dark {
-    background-color: var(--bg);
-    color: var(--text-main);
-}

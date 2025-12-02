@@ -5,7 +5,8 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
+    /* background-color: var(--bg); */
+    background: var(--gradient-bg);
     font-family: 'Poppins', sans-serif;
     min-width: 430px;
     gap: 3rem;

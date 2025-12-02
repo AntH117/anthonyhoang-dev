@@ -7,7 +7,6 @@
     font-family: 'Poppins', sans-serif;
     min-width: 430px;
     gap: 1rem;
-    background-color: var(--bg);
     color: var(--text-main);
     display: flex;
     flex-direction: column;

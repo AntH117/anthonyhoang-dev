@@ -11,37 +11,67 @@
 :root {
   /* Light mode */
   --bg: #F7F8FA;
-  --bg-card: #FFFFFF;
-  --bg-sub-card: #e6e6e6;
-  --text-sub-card: #4A4D50;
-  --text-main: #1A1A1A;
-  --text-sub: #5A5A5A;
-  --border: #DADDE1;
-  --button: #2A7AE4;
+  --bg-card: #F1F5F9;
+  --bg-sub-card: #F3EEFF;
+  --sub-card-hover: rgb(223, 223, 223);
+  --text-sub-card: #6E6A80;
+  --text-main: #1E293B;
+  --text-sub: #475569;
+  --border: #E2E8F0;
+  --primary: #A5B4FC;
+
+  --button: #C4B5FD;
+  --button-hover: #cec2fa;
+  --button-text: #1E293B;
+
+  --accent: #F9A8D4;
+  --accent-hover: #F472B6;
 
   --scroll-track: #F2F3F5;
   --scroll-thumb: #C5C7CA;
   --scroll-thumb-hover: #B1B3B6;
 
   --anchor: #60a5fa;
+  --gradient-bg: linear-gradient(135deg, #FDEFFB 0%, #E7F0FF 100%);
+  --gradient-nav: linear-gradient(135deg, #C4B5FD 0%, #D9CCFF 100%);
+
+  --toggle-bg:  #A78BFA;
+  --toggle-handle: #F3EEFF;
+  --toggle-shadow: 0 0 10px 5px rgba(243, 238, 255, 0.5),
+        inset 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
 /* Dark mode */
 .dark {
   --bg: #111315;
-  --bg-card: #181A1D;
-  --bg-sub-card: #2A2D31;
-  --text-sub-card: #D4D7DB;
+  --bg-card: #1E293B;
+  --bg-sub-card: #2B2536;
+  --sub-card-hover: rgb(100, 100, 100);
+  --text-sub-card: #DAD4E8;
   --text-main: #FFFFFF;
   --text-sub: #A9B0B8;
   --border: #2A2D31;
-  --primary: #5CA8FF;
+  --primary: #C7D2FE;
+
+  --button: #A78BFA;
+  --button-hover: #C4B5FD;
+  --button-text: #FFFFFF; 
+
+  --accent: #F9A8D4;
+  --accent-hover: #F472B6;
   
   --scroll-track: #1E2023;
   --scroll-thumb: #3A3D41;
   --scroll-thumb-hover: #4B4F54;
 
   --anchor: #3B82F6;
+  --gradient-bg: linear-gradient(135deg, #1E1B4B 0%, #111827 100%);
+  --gradient-nav: linear-gradient(135deg, #7F5AF0 0%, #C4B5FD 100%);
+
+  --toggle-bg: #2E2536;
+  --toggle-handle: #A78BFA;
+  --toggle-shadow:  0 0 8px 4px rgba(167, 139, 250, 0.5),
+      inset 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
 /* Scroll bar */

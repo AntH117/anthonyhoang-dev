@@ -51,7 +51,7 @@
 
 .contact-field-name:hover {
     transform: translateX(4px);
-    color: #3b82f6; /* soft blue */
+    color: var(--accent)
 }
 
 /* .contact-field-body:hover .contact-field-icon {

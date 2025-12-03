@@ -70,12 +70,12 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     transition: all 0.2s ease-in-out;
 }
 
 .profile-pic-body:hover {
-    border: 2px solid #60a5fa;
+    border: 3px solid var(--button)
 }
 
 .profile-pic {

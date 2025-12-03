@@ -9,6 +9,8 @@
 Welcome to my personal landing page — a clean, modern, and responsive web portfolio showcasing my skills, projects, and journey as a front-end developer.
 Built with React, this website serves as the main hub for my work, experience, and contact information.
 
+[Check it out here!](https://anthonyhoang-dev.netlify.app/)
+
 ### 🖥️ Responsive Design
 
 - Fully mobile-friendly layout
